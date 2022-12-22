@@ -26,10 +26,16 @@ namespace calculator_automation
             Driver.Navigate().GoToUrl("https://dx26t1diyptna.cloudfront.net/");
         }
 
-        internal void FillOutEmail(User user) // TestUser is class, user is 
+        internal void FillOutLoginForm(User user) // TestUser is class, user is parameter
         {
             Emailfield.SendKeys(user.Email);
             Passwordfield.SendKeys(user.Password);
         }
+
+        //internal void FillOutEmailAndPassword(string email, string password) 
+        //{
+        //    Emailfield.SendKeys(email);
+        //    Passwordfield.SendKeys(password);
+        //}
     }
 }

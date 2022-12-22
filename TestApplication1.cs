@@ -26,7 +26,7 @@ namespace calculator_automation
             testApplicationPage.GoTo();
             // Assert.IsTrue(testApplicationPage.IsVisible);
 
-            testApplicationPage.FillOutEmail(user1);
+            testApplicationPage.FillOutLoginForm(user1);
 
         }
 
@@ -43,7 +43,7 @@ namespace calculator_automation
             testApplicationPage.GoTo();
             // Assert.IsTrue(testApplicationPage.IsVisible);
 
-            testApplicationPage.FillOutEmail(user2);
+            testApplicationPage.FillOutLoginForm(user2);
 
         }
 
