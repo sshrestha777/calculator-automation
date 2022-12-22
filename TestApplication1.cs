@@ -24,7 +24,7 @@ namespace calculator_automation
 
             var testApplicationPage = new LoginPageTest(Driver);
             testApplicationPage.GoTo();
-            // Assert.IsTrue(testApplicationPage.IsVisible);
+            Assert.IsNotNull(testApplicationPage.LogInText);
 
             testApplicationPage.FillOutLoginForm(user1);
 
@@ -41,7 +41,7 @@ namespace calculator_automation
 
             var testApplicationPage = new LoginPageTest(Driver);
             testApplicationPage.GoTo();
-            // Assert.IsTrue(testApplicationPage.IsVisible);
+            Assert.IsTrue(testApplicationPage.LogInText != null);
 
             testApplicationPage.FillOutLoginForm(user2);
 

@@ -5,22 +5,26 @@ namespace calculator_automation
 {
     internal class LoginPageTest
     {
+        //private object myBool;
+
         private IWebDriver Driver { get; set; }
-    
+
 
         public LoginPageTest(IWebDriver driver) // constructor as TestApplicationPage
         {
-           Driver = driver;
+            Driver = driver;
         }
 
         public IWebElement Emailfield => Driver.FindElement(By.Id("email"));
 
         public IWebElement Passwordfield => Driver.FindElement(By.Id("password"));
 
-        //public bool IsVisible { get; internal set; }
+        public IWebElement LogInText => Driver.FindElement(By.XPath("//h1[text()='Log in']"));
+
+      
+        
 
 
-        //Driver.FindElement(By.Id("password")).Send
         internal void GoTo()
         {
             Driver.Navigate().GoToUrl("https://dx26t1diyptna.cloudfront.net/");
