@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="TestApplication1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestApplicationPage.cs" />
+    <Compile Include="TestUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
