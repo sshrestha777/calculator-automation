@@ -3,12 +3,12 @@ using System;
 
 namespace calculator_automation
 {
-    internal class TestApplicationPage
+    internal class LoginPageTest
     {
         private IWebDriver Driver { get; set; }
     
 
-        public TestApplicationPage(IWebDriver driver)
+        public LoginPageTest(IWebDriver driver) // constructor as TestApplicationPage
         {
            Driver = driver;
         }
@@ -26,9 +26,8 @@ namespace calculator_automation
             Driver.Navigate().GoToUrl("https://dx26t1diyptna.cloudfront.net/");
         }
 
-        internal void FillOutEmail(TestUser  user)
+        internal void FillOutEmail(User user) // TestUser is class, user is 
         {
-
             Emailfield.SendKeys(user.Email);
             Passwordfield.SendKeys(user.Password);
         }

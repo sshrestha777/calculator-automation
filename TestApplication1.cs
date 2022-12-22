@@ -11,25 +11,43 @@ namespace calculator_automation
     [TestCategory("TestApplication1")]
     public class TestApplication1
     {
-        private IWebDriver Driver { get; set; }
+        private IWebDriver Driver { get; set; } //( declare property)
 
         [TestMethod]
         public void TestMethod1()
 
         {
-            var testUser = new TestUser();
-            testUser.Email = "sam@gmail.com";
-            testUser.Password = "Test@1234";
-            Driver = GetChromeDriver();
-            var testApplicationPage = new TestApplicationPage(Driver);
+            var user1 = new User();
+            user1.Email = "sam@gmail.com"; //(assign property value)
+            user1.Password = "Test@1234"; //(assign property value)
+            Driver = GetChromeDriver(); //( assign property value)
+
+            var testApplicationPage = new LoginPageTest(Driver);
             testApplicationPage.GoTo();
             // Assert.IsTrue(testApplicationPage.IsVisible);
 
-            testApplicationPage.FillOutEmail(testUser);
+            testApplicationPage.FillOutEmail(user1);
 
         }
 
-        private IWebDriver GetChromeDriver()
+        [TestMethod]
+        public void TestMethod2()
+
+        {
+            var user2 = new User();
+            user2.Email = "suraj@gmail.com"; //(assign property value)
+            user2.Password = "Password123"; //(assign property value)
+            Driver = GetChromeDriver(); //( assign property value)
+
+            var testApplicationPage = new LoginPageTest(Driver);
+            testApplicationPage.GoTo();
+            // Assert.IsTrue(testApplicationPage.IsVisible);
+
+            testApplicationPage.FillOutEmail(user2);
+
+        }
+
+        private IWebDriver GetChromeDriver() // method returning IWebDriver
         {
             var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             return new ChromeDriver(outPutDirectory);
